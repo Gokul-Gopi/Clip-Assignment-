@@ -1,0 +1,9 @@
+.home-page{
+    min-height: 99vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+    padding: 1rem;
+    z-index: 10;
+}

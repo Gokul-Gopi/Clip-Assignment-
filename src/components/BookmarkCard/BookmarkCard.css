@@ -1,0 +1,44 @@
+.bookmark-card{
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+.bookmark-card .name{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.bookmark-card span{
+    margin-left: 0.4rem;
+}
+
+.bookmark-card div{
+    padding: 0.5rem;
+}
+
+.bookmark-card .desc button{
+    position: absolute;
+    bottom: 3%;
+    background-color: transparent;
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+.bookmark-card .desc .card-btn1{
+    right: 2%;
+}
+
+.bookmark-card .desc .card-btn2{
+    right: 8%;
+}
