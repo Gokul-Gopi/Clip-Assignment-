@@ -39,7 +39,7 @@ const ResetPassword = () => {
                     <input type="text" onChange={(e) => setUserDetails(preState => ({ ...preState, newPwd: e.target.value }))} value={userDetails.newPwd} />
                 </div>
 
-                <button onClick={changePassword}>{state.loading ? 'J'}Change Password</button>
+                <button > Password</button>
             </form>
         </div>
     )
