@@ -17,11 +17,13 @@ const Home = () => {
     useEffect(() => {
         if (!authState.isLoggedIn) {
             Navigate('/login')
+            console.log('useffect1')
         }
     }, [])
 
 
     useEffect(() => {
+        console.log('useffect2')
         const getAllBookmarks = async () => {
             dispatch({ type: 'LOADING' })
             const response = await networkCall('/bookmark', 'GET');
@@ -31,6 +33,7 @@ const Home = () => {
         }
 
         if (authState.currentUserToken) {
+            console.log('useffect3')
             getAllBookmarks();
         };
 

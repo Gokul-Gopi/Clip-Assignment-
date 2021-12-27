@@ -29,11 +29,7 @@ function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
-        <Route exact path='/' element={<Home />} />
-
-        {/* <Route exact path='/' element={<PrivateRoute />}>
-          <Route exact path='/' element={<Home />} />
-        </Route> */}
+        <Route path='/' element={<Home />} />
       </Routes>
     </div>
   );
