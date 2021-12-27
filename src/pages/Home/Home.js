@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import BookmarkCard from '../../components/BookmarkCard/BookmarkCard';
 import EditCardPopup from '../../components/EditCardPopup/EditCardPopup';
 import { useAuth } from '../../context/AuthContext';
@@ -11,6 +12,14 @@ const Home = () => {
 
     const { authState } = useAuth();
     const { state, dispatch } = useFeed();
+    const Navigate = useNavigate();
+
+    useEffect(() => {
+        if (!authState.isLoggedIn) {
+            Navigate('/login')
+        }
+    }, [])
+
 
     useEffect(() => {
         const getAllBookmarks = async () => {
@@ -24,6 +33,7 @@ const Home = () => {
         if (authState.currentUserToken) {
             getAllBookmarks();
         };
+
     }, [authState]);
 
     return (
