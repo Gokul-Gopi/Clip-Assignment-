@@ -15,11 +15,12 @@ const ResetPassword = () => {
     })
     const { state, dispatch } = useFeed()
 
-    const changePassword = async () => {
+    const changePassword = async (e) => {
+        e.preventDefault();
         dispatch({ type: 'LOADING' });
         const response = await networkCall('/user/resetpassword', 'PUT', userDetails);
         console.log(response)
-        if (response.staus === 200) {
+        if (response.status === 200) {
             Navigate('/login');
         }
         dispatch({ type: 'LOADING' });
@@ -38,7 +39,7 @@ const ResetPassword = () => {
                     <input type="text" onChange={(e) => setUserDetails(preState => ({ ...preState, newPwd: e.target.value }))} value={userDetails.newPwd} />
                 </div>
 
-                <button onClick={changePassword}>Change Password</button>
+                <button onClick={changePassword}>{state.loading ? 'J'}Change Password</button>
             </form>
         </div>
     )
