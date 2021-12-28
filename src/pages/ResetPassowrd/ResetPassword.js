@@ -13,15 +13,18 @@ const ResetPassword = () => {
         email: '',
         newPwd: ''
     })
-    const { state, dispatch } = useFeed()
+    const { state, dispatch } = useFeed();
+    const [error, setError] = useState('')
 
     const changePassword = async (e) => {
         e.preventDefault();
         dispatch({ type: 'LOADING' });
         const response = await networkCall('/user/resetpassword', 'PUT', userDetails);
-        console.log(response)
+        console.log(error, response)
         if (response.status === 200) {
             Navigate('/login');
+        } else {
+            setError('User doesn\'t exist')
         }
         dispatch({ type: 'LOADING' });
     }
@@ -29,6 +32,7 @@ const ResetPassword = () => {
     return (
         <div className='reset-page'>
             <form className='reset-pwd'>
+                <span className='error'>{error}</span>
                 <div className='form-input'>
                     <label>Email</label>
                     <input type="text" onChange={(e) => setUserDetails(preState => ({ ...preState, email: e.target.value }))} value={userDetails.email} />
@@ -39,7 +43,7 @@ const ResetPassword = () => {
                     <input type="text" onChange={(e) => setUserDetails(preState => ({ ...preState, newPwd: e.target.value }))} value={userDetails.newPwd} />
                 </div>
 
-                <button > Password</button>
+                <button onClick={changePassword}>{state.loading ? 'Hold on a sec..' : 'Reset'} </button>
             </form>
         </div>
     )

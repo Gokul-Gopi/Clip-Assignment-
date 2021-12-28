@@ -5,7 +5,6 @@ import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Profile from './pages/Profile/Profile';
 import { defaultHeaderForToken } from './networkCall';
 import { useAuth } from './context/AuthContext';

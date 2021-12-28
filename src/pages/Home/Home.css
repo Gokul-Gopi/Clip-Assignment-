@@ -7,3 +7,12 @@
     padding: 1rem;
     z-index: 10;
 }
+
+
+@media (max-width: 900px) {
+    .home-page { grid-template-columns: repeat(2, 1fr); }
+  }
+
+@media (max-width: 600px) {
+    .home-page { grid-template-columns: repeat(1, 1fr); }
+  }

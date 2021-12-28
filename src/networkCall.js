@@ -23,7 +23,7 @@ const networkCall = async (route, method, data) => {
                     data: data
                 })
             } catch (err) {
-                console.log(err.response)
+                return err.message
             }
 
 
@@ -35,7 +35,7 @@ const networkCall = async (route, method, data) => {
                     data: data
                 })
             } catch (err) {
-                console.log(err.response)
+                return err.message
             }
 
 
